@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 
-const SubHeader = ({ selectedUnit }) => {
+const SubHeader = ({ selectedUnit, setFilter }) => {
   const [sensorActive, setSensorActive] = useState(false);
   const [criticoActive, setCriticoActive] = useState(false);
 
   const toggleSensorActive = () => {
     setCriticoActive(false);
     setSensorActive(!sensorActive);
+    sensorActive ? setFilter("") : setFilter("operating");
   };
 
   const toggleCriticoActive = () => {
     setSensorActive(false);
     setCriticoActive(!criticoActive);
+    criticoActive ? setFilter("") : setFilter("alert");
   };
 
   return (
     <div className="flex place-content-between items-center h-[32px] px-[8px] mb-[12px]">
       <div className="flex items-center h-[28px]">
         <p className="font-bold text-black text-[20px]">Ativos</p>
-        <p className="text-gray-500 text-[16px]">&nbsp;/&nbsp; {selectedUnit}</p>
+        <p className="text-gray-500 text-[16px]">&nbsp;/&nbsp; {selectedUnit.name} Unit</p>
       </div>
       <ul className="flex items-center gap-2">
         <li

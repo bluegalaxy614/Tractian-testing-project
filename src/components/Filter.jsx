@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Filter = ({ onFilter }) => {
-  const [query, setQuery] = useState("");
+const Filter = ({ setQuery }) => {
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
-    onFilter(e.target.value);
   };
 
   return (

@@ -26,7 +26,7 @@ const Header = ({ Units, onUnitSelect }) => {
             <span>
               <img src="./icons/unit.png" alt="" />
             </span>
-            <p className="font-bold text-[12px] text-white">{unit}</p>
+            <p className="font-bold text-[12px] text-white">{unit.name}</p>
           </li>
         ))}
       </ul>
